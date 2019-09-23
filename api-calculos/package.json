@@ -1,0 +1,12 @@
+{
+  "name": "api-calculos",
+  "version": "1.0.0",
+  "description": "La idea es crear un servidor en node.js con Express que tenga 4 APIs con cálculos y una página para probarlas.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
