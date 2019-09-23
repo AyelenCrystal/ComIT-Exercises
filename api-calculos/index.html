@@ -21,6 +21,12 @@
     <button onclick="divide()">Divide</button>
 
     <script>
+        function onclick() {
+            if (num1 == null || num2 == null ) {
+                alert("Error de calculo");
+            };
+        };
+        
         function adding() {
             let numbers = {
                 num1 : document.getElementById("num1").value,
@@ -38,10 +44,66 @@
             xhr.open("GET", "http://localhost:5000/adding?num1="+ numbers.num1 +"&num2=" +numbers.num2 );
             
             xhr.send();
-
-            
-            
         };
+
+        function subtract() {
+            let numbers = {
+                num1 : document.getElementById("num1").value,
+                num2 : document.getElementById("num2").value
+            };
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.onload = function () {
+                var response = JSON.parse(xhr.responseText);
+                
+                alert(response.result);
+            }
+
+            xhr.open("GET", "http://localhost:5000/subtract?num1="+ numbers.num1 +"&num2=" +numbers.num2 );
+            
+            xhr.send();
+        };
+
+        function multiply() {
+            let numbers = {
+                num1 : document.getElementById("num1").value,
+                num2 : document.getElementById("num2").value
+            };
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.onload = function () {
+                var response = JSON.parse(xhr.responseText);
+                
+                alert(response.result);
+            }
+
+            xhr.open("GET", "http://localhost:5000/multiply?num1="+ numbers.num1 +"&num2=" +numbers.num2 );
+            
+            xhr.send();
+        };
+
+        function divide() {
+            let numbers = {
+                num1 : document.getElementById("num1").value,
+                num2 : document.getElementById("num2").value
+            };
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.onload = function () {
+                var response = JSON.parse(xhr.responseText);
+                
+                alert(response.result);
+            }
+
+            xhr.open("GET", "http://localhost:5000/divide?num1="+ numbers.num1 +"&num2=" +numbers.num2 );
+            
+            xhr.send();
+
+        };
+
     </script>
 
 
