@@ -5,7 +5,7 @@ const path = require("path");
 const app = express();
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname,`/index`)));
+//app.use(express.static(path.join(__dirname,`/index`)));
 
 app.get("/",(require, response)=>{
     response.sendFile(path.join(__dirname, `/index.html`));
