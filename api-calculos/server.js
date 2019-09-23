@@ -12,9 +12,12 @@ app.get("/",(require, response)=>{
 
 });
 
-app.get("/adding",(require, response)=>{
-    response.sendFile(path.join(__dirname,"/adding.html"));
-    response.send("num1" + "num2");
+app.get("/adding", (require, response)=>{
+    // response.sendFile(path.join(__dirname,"/adding.html"));
+    var req = require.query;
+    response.send({
+        result: (parseFloat(req.num1) + parseFloat(req.num2))
+    });
 });
 
 app.get("/subtract",(require, response)=>{
